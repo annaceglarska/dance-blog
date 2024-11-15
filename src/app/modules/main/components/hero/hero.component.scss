@@ -1,0 +1,12 @@
+.hero-container {
+  height: 350px;
+  overflow: hidden;
+  background-image: url("./../../../../../assets/hero.jpg");
+  background-position: center 5%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+
+  img {
+    width: 100%;
+  }
+}
