@@ -1,7 +1,13 @@
 <div class="navbar-panel">
   <img src="/assets/logo.png" class="logo" />
+
+  <div class="buttons-group ">
+    <a mat-button href="">HOME</a>
+    <a mat-button href="/about">ABOUT</a>
+    <a mat-button href="/blog">BLOG</a>
+  </div>
   <div>
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <button mat-button [matMenuTriggerFor]="menu">User</button>
     <mat-menu #menu="matMenu">
       <button mat-menu-item>Profile</button>
       <button mat-menu-item>Sign in</button>

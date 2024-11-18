@@ -8,6 +8,10 @@ import { PostsComponent } from './components/posts/posts.component';
 import { PostComponent } from './components/post/post.component';
 import { StartComponent } from './page/start/start.component';
 import { CommonModule } from '@angular/common';
+import { BlogComponent } from './page/blog/blog.component';
+import { TagsListComponent } from './components/tags-list/tags-list.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 @NgModule({
@@ -18,11 +22,15 @@ import { CommonModule } from '@angular/common';
     MainComponent,
     HeroComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    BlogComponent,
+    TagsListComponent
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatGridListModule,
   ]
 })
 export class MainModule { }

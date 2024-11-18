@@ -1,8 +1,23 @@
-<div>
-  <h4>{{ post.title }}</h4>
-  <div>
-    {{ post.content }}
-  </div>
-  <span>{{ post.publishedAt | date}}</span>
-  <p>{{ post.author }}</p>
-</div>
+<mat-card appearance="outlined" class="blog__card-container" [ngClass]="index  %  2 == 0 ? 'left' : 'right'">
+  <img mat-card-image ra src="../../../../../assets/hip_hop.jpg" alt="Post image" />
+  <mat-card-header>
+    <mat-card-subtitle>
+      <span *ngFor="let tag of post.tags"> {{ tag }} </span>
+    </mat-card-subtitle>
+    <mat-card-title>{{ post.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{post.content}}</p>
+    <div class="blog__top-info">
+      <span>
+        {{ post.publishedAt | date }}
+      </span>
+      <span>
+        {{ post.author }}
+      </span>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button>GO TO DETAILS</a>
+  </mat-card-actions>
+</mat-card>

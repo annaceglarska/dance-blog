@@ -19,7 +19,7 @@ export const postsMock: Posts = [
     author: "Ania",
     authorId: "1",
     publishedAt: "2024-11-15T12:15:24.002Z",
-    editedAt: "2023-8-13",
+    editedAt: "2023-8-13T12:15:24.002Z",
     tags: ["high-heels", "dance"],
     title: "Spins in choreo",
     content: `Protips:

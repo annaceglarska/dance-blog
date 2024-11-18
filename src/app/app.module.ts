@@ -20,6 +20,7 @@ import {
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { firebaseConfig } from './app.config';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 @NgModule({
   providers: [
@@ -31,6 +32,7 @@ import { firebaseConfig } from './app.config';
     UserTrackingService,
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
   ],
   declarations: [AppComponent, NavbarComponent],
   imports: [

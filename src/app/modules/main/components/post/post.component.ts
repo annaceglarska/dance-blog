@@ -9,4 +9,7 @@ import { Post } from '../../models/post.model';
 export class PostComponent {
   @Input()
   post!: Post
+
+  @Input()
+  index!: number
 }
