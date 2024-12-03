@@ -1,11 +1,10 @@
 export type Posts = Post[]
 
 export interface Post {
-  id: string,
   author: string,
   authorId: string
   publishedAt: string,
-  editedAt: string | null,
+  editedAt?: string | null,
   tags: string[],
   title: string,
   /**

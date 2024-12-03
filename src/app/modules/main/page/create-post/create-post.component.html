@@ -1,0 +1,34 @@
+<h1>Create post</h1>
+<div class="create-post__form-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="create-post__fields-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" formControlName="title">
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        @if (form.get('title')?.hasError('required')){
+        <mat-error>Field is required</mat-error>
+        }
+      </mat-form-field>
+
+
+      <mat-form-field appearance="outline">
+        <mat-label>Tags</mat-label>
+        <mat-select multiple formControlName="tags">
+          @for (tag of tagsList; track tagsList) {
+          <mat-option [value]="tag.id">{{tag.label}}</mat-option>
+          }
+        </mat-select>
+        @if (form.get('tags')?.hasError('required')){
+        <mat-error>You must select at least one tag</mat-error>
+        }
+      </mat-form-field>
+    </div>
+    <md-editor name="Content" [height]="'400px'" required maxlength="500" formControlName="content">
+      <slot custom-btns></slot>
+
+    </md-editor>
+    <button mat-flat-button type="submit">Submit</button>
+
+  </form>
+</div>

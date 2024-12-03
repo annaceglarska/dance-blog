@@ -21,6 +21,10 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { firebaseConfig } from './app.config';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { MarkdownModule } from 'ngx-markdown';
+import { MARKED_OPTIONS } from 'ngx-markdown';
+import { gfmHeadingId } from 'marked-gfm-heading-id';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 
 @NgModule({
   providers: [
@@ -32,7 +36,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     UserTrackingService,
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    { provide: FIREBASE_OPTIONS, useValue: firebaseConfig }
+    { provide: FIREBASE_OPTIONS, useValue: firebaseConfig },
   ],
   declarations: [AppComponent, NavbarComponent],
   imports: [
@@ -42,6 +46,18 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     MainModule,
     MatMenuModule,
     MatButtonModule,
+    MarkdownModule.forRoot({
+      markedOptions: {
+        provide: MARKED_OPTIONS,
+        useValue: {
+          gfm: true,
+          breaks: false,
+          pedantic: false,
+        }
+      },
+      markedExtensions: [gfmHeadingId()],
+    }),
+    LMarkdownEditorModule
   ],
   bootstrap: [AppComponent],
 })

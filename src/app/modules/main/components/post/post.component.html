@@ -7,7 +7,7 @@
     <mat-card-title>{{ post.title }}</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <p>{{post.content}}</p>
+    <markdown emoji katex mermaid gfm breaks ngPreserveWhitespaces>{{ post.content }}</markdown>
     <div class="blog__top-info">
       <span>
         {{ post.publishedAt | date }}
@@ -21,3 +21,8 @@
     <a mat-button>GO TO DETAILS</a>
   </mat-card-actions>
 </mat-card>
+
+<!-- <markdown>Feeling the desire to dance when there is no visible progress.
+
+  > **ProTip:** Don't take part in dance competitions.
+</markdown> -->

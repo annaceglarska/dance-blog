@@ -12,6 +12,15 @@ import { BlogComponent } from './page/blog/blog.component';
 import { TagsListComponent } from './components/tags-list/tags-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { CreatePostComponent } from './page/create-post/create-post.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -24,13 +33,23 @@ import { MatGridListModule } from '@angular/material/grid-list';
     PostsComponent,
     PostComponent,
     BlogComponent,
-    TagsListComponent
+    TagsListComponent,
+    CreatePostComponent
   ],
   imports: [
     RouterModule.forChild(routes),
     CommonModule,
     MatCardModule,
     MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MarkdownModule.forChild(),
+    LMarkdownEditorModule,
+    MatButtonModule
   ]
 })
 export class MainModule { }
