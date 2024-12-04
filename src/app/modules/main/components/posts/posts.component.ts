@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../../models/post.model';
-// import { postsMock } from '../../mocks/post.mock';
 import { PostService } from '../../services/post.service';
 import { map } from 'rxjs';
 
@@ -19,7 +18,7 @@ export class PostsComponent implements OnInit {
   async ngOnInit() {
     this.postService.getAllSnap()
       .pipe(
-        map(snap => snap.docs.map(doc => doc.data()))
+        map(snap => snap.docs.map(doc => doc.data())),
       )
       .subscribe(data => {
         this.posts = data;

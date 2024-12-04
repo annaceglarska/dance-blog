@@ -2,7 +2,6 @@ import { Posts, StatusEnum } from "../models/post.model";
 
 export const postsMock: Posts = [
   {
-    id: "0",
     author: "Grzes",
     authorId: "0",
     publishedAt: "2024-10-15T12:15:24.002Z",
@@ -15,7 +14,6 @@ export const postsMock: Posts = [
     status: StatusEnum.ACTIVE,
   },
   {
-    id: "1",
     author: "Ania",
     authorId: "1",
     publishedAt: "2024-11-15T12:15:24.002Z",
