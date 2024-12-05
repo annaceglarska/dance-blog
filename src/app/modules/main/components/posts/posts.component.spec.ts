@@ -5,13 +5,12 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { firebaseConfig } from '../../../../app.config';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { postsMock } from '../../mocks/post.mock';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import { PostService } from '../../services/post.service';
 import { PostComponent } from '../post/post.component';
 import { MatCardModule } from '@angular/material/card';
 import { MARKED_OPTIONS, MarkdownModule } from 'ngx-markdown';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
-import { Post } from '../../models/post.model';
 
 const querySnapshotPostMock = {
   docs: [
