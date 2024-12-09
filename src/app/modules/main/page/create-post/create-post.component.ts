@@ -69,7 +69,6 @@ export class CreatePostComponent implements OnInit {
       };
       try {
         await this.postService.create(data);
-        alert('Success');
         this.router.navigate(['/blog']);
       } catch (error) {
         alert('Failed');
