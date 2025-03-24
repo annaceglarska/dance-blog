@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Post, StatusEnum } from '../../models/post.model';
 import { PostService } from '../../services/post.service';
-import { Router, Routes } from '@angular/router';
 import { TagService } from '../../services/tag/tag.service';
 import { map } from 'rxjs';
+import { Router } from '@angular/router';
+import { LMarkdownEditorModule } from 'ngx-markdown-editor';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 interface TagOption {
   id: string;
@@ -13,10 +16,11 @@ interface TagOption {
 }
 
 @Component({
-    selector: 'app-create-post',
-    templateUrl: './create-post.component.html',
-    styleUrl: './create-post.component.scss',
-    standalone: false
+  selector: 'app-create-post',
+  templateUrl: './create-post.component.html',
+  styleUrl: './create-post.component.scss',
+  imports: [LMarkdownEditorModule, MatFormFieldModule, MatSelectModule, ReactiveFormsModule],
+  standalone: true
 })
 export class CreatePostComponent implements OnInit {
   tagsList: TagOption[] = [];

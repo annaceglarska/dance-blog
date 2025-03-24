@@ -1,4 +1,18 @@
-import { FirebaseOptions } from "@angular/fire/app";
+import { FirebaseOptions, initializeApp, provideFirebaseApp } from "@angular/fire/app";
+
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+
+import { routes } from './app.routes';
+import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
+import { getAuth, provideAuth } from "@angular/fire/auth";
+import { getAnalytics, provideAnalytics, ScreenTrackingService, UserTrackingService } from "@angular/fire/analytics";
+import { getFirestore, provideFirestore } from "@angular/fire/firestore";
+import { getStorage, provideStorage } from "@angular/fire/storage";
+import { FIREBASE_OPTIONS } from "@angular/fire/compat";
+import { MARKED_OPTIONS, provideMarkdown } from "ngx-markdown";
+import { gfmHeadingId } from "marked-gfm-heading-id";
+
 
 export const firebaseConfig: FirebaseOptions = {
   projectId: 'dance-blog',
@@ -9,3 +23,32 @@ export const firebaseConfig: FirebaseOptions = {
   messagingSenderId: '458947448320',
   measurementId: 'G-J172NCQJ1W',
 };
+
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideRouter(routes),
+    provideRouter(routes),
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideAuth(() => getAuth()),
+    provideAnalytics(() => getAnalytics()),
+    ScreenTrackingService,
+    UserTrackingService,
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
+    { provide: FIREBASE_OPTIONS, useValue: firebaseConfig },
+    provideMarkdown({
+      markedOptions: {
+        provide: MARKED_OPTIONS,
+        useValue: {
+          gfm: true,
+          breaks: false,
+          pedantic: false,
+        }
+      },
+      markedExtensions: [gfmHeadingId()],
+    })
+  ]
+};
+

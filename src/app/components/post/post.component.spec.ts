@@ -4,7 +4,7 @@ import { PostComponent } from './post.component';
 import { MatCardModule } from '@angular/material/card';
 import { MARKED_OPTIONS, MarkdownModule } from 'ngx-markdown';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
-import { postsMock } from '../../mocks/post.mock';
+import { postsMock } from '../../modules/main/mocks/post.mock';
 
 describe('PostComponent', () => {
   let component: PostComponent;

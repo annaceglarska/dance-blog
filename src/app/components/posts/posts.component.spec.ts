@@ -2,11 +2,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PostsComponent } from './posts.component';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { firebaseConfig } from '../../../../app.config';
+import { firebaseConfig } from '../../app.config';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { postsMock } from '../../mocks/post.mock';
+import { postsMock } from '../../modules/main/mocks/post.mock';
 import { of } from 'rxjs';
-import { PostService } from '../../services/post.service';
+import { PostService } from '../../modules/main/services/post.service';
 import { PostComponent } from '../post/post.component';
 import { MatCardModule } from '@angular/material/card';
 import { MARKED_OPTIONS, MarkdownModule } from 'ngx-markdown';
