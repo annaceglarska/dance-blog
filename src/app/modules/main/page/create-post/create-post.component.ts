@@ -13,9 +13,10 @@ interface TagOption {
 }
 
 @Component({
-  selector: 'app-create-post',
-  templateUrl: './create-post.component.html',
-  styleUrl: './create-post.component.scss',
+    selector: 'app-create-post',
+    templateUrl: './create-post.component.html',
+    styleUrl: './create-post.component.scss',
+    standalone: false
 })
 export class CreatePostComponent implements OnInit {
   tagsList: TagOption[] = [];
