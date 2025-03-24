@@ -2,11 +2,11 @@
   <img src="/assets/logo.png" class="logo" />
 
   <div class="buttons-group ">
-    <a mat-button href="">HOME</a>
-    <a mat-button href="/about">ABOUT</a>
-    <a mat-button href="/blog">BLOG</a>
+    <a mat-button [routerLink]="['']">HOME</a>
+    <a mat-button [routerLink]="['/about']">ABOUT</a>
+    <a mat-button [routerLink]="['/blog']">BLOG</a>
     <!-- TODO: remove after implementation of authorization -->
-    <a mat-button href="/post/create">New post</a>
+    <a mat-button [routerLink]="['/post/create']">New post</a>
   </div>
   <div>
     <button mat-button [matMenuTriggerFor]="menu">User</button>

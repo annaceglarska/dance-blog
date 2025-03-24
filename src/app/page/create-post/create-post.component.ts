@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 import { LMarkdownEditorModule } from 'ngx-markdown-editor';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 interface TagOption {
   id: string;
@@ -19,7 +22,7 @@ interface TagOption {
   selector: 'app-create-post',
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.scss',
-  imports: [LMarkdownEditorModule, MatFormFieldModule, MatSelectModule, ReactiveFormsModule],
+  imports: [MatIconModule, MatButtonModule, LMarkdownEditorModule, MatFormFieldModule, MatSelectModule, ReactiveFormsModule, MatInputModule],
   standalone: true
 })
 export class CreatePostComponent implements OnInit {

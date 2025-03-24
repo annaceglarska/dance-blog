@@ -28,7 +28,6 @@ export const firebaseConfig: FirebaseOptions = {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideRouter(routes),
     provideAnimationsAsync(),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
